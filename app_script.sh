@@ -14,7 +14,6 @@ response=$(zenity --entry --title="Aplicatie Practica 2023" --text="            
 # Verificare raspuns utilizator
 
 if [[ "$response" == "1" || "$response" == "2" || "$response" == "3" || "$response" == "4" || "$response" == "5" ]]; then
-    echo "Opțiunea este validă: $response"
     init=1
 else
     # Utilizați Zenity pentru a afișa un mesaj de eroare
