@@ -1,12 +1,27 @@
 #!/bin/bash
 
-# Utilizați Zenity pentru a afișa o fereastră de dialog cu titlu, mesaj și câmp de text de dimensiuni mai mari
-response=$(zenity --entry --title="Aplicatie Practica 2023" --text="Environment de invatare pentru studenti: " --width=400 --height=200)
+# Folosire Zenity pentru afisare GUI
 
-# Verificați dacă utilizatorul a introdus un răspuns
-if [[ -n "$response" ]]; then
-    echo "Răspunsul utilizatorului: $response"
+
+
+
+init=0
+
+while [ $init -eq 0 ]
+do
+response=$(zenity --entry --title="Aplicatie Practica 2023" --text="                                              Environment de invatare pentru studenti \n\n  Selecteaza una dintre optiuni: \n \n 1. Verificare utilizatori \n 2. Verificare acces fisiere, permisiuni \n 3. Verificare continut fisiere \n 4. Verificare diff-uri pe fisiere \n  " --width=600 --height=400)
+
+# Verificare raspuns utilizator
+
+if [[ "$response" == "1" || "$response" == "2" || "$response" == "3" || "$response" == "4" ]]; then
+    echo "Opțiunea este validă: $response"
+    init=1
 else
-    # Utilizați Zenity pentru a afișa un nou window cu mesajul "Nu ați introdus niciun mesaj!"
-    zenity --info --title="Eroare" --text="Nu ați introdus niciun mesaj!"
+    # Utilizați Zenity pentru a afișa un mesaj de eroare
+    zenity --error --title="Eroare" --text="Opțiunea nu este validă!"
+    
 fi
+
+done
+
+
