@@ -24,23 +24,28 @@ fi
 
 done
 
-if [ $response -eq 1 ]
+if [ "$response" -eq 1 ]
 then
 	./utilizatori.sh
 	./app_script.sh
 fi
 
-if [ $response -eq 5 ]
+if [ "$response" -eq 5 ];
 then
 	exit 0
 
 fi
 
-if [ $response -eq 2 ]
+if [ "$response" -eq 2 ]
 then
         ./permisiuni.sh
         ./app_script.sh
 fi
 
+if [ "$response" -eq 3 ]
+then
+	./continut_fisier.sh
+	./app_script.sh
+fi
 
 
