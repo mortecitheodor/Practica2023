@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Obține lista utilizatorilor
+# Obtinem lista utilizatorilor
 users=$(cut -d: -f1 /etc/passwd)
 
-# Construiește textul cu informații despre utilizatori
+# Textul cu informații despre utilizatori
 user_info=""
 for user in $users; do
     user_info+="Utilizator: $user\n"
@@ -13,7 +13,7 @@ for user in $users; do
     user_info+="-----\n"
 done
 
-# Afișează dialogul Zenity cu informațiile despre utilizatori
+# Afisam informatiile cu ajutorul unui window
 zenity --info --title "Informatii utilizatori" --text "$user_info" --width=500 --height=300 
 
 exit 0

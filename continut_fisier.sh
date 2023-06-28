@@ -11,7 +11,7 @@ if [ -n "$file_path" ]; then
     # Afiseaza continutul fisierului intr-o caseta de dialog
     zenity --text-info --title "Continutul fisierului" --filename="$file_path" --width=1000 --height=800 --editable --text="$file_content" >/dev/null 2>&1
 else
-    # Daca nu a fost selectat niciun fisier, afiseaza un mesaj de eroare
+    # Daca nu a fost selectat niciun fisier, se va afisa un mesaj de eroare
     zenity --error --title "Eroare" --text "Nu a fost selectat niciun fisier."
 fi
 

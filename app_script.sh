@@ -2,9 +2,6 @@
 
 # Folosire Zenity pentru afisare GUI
 
-
-
-
 init=0
 
 while [ $init -eq 0 ]
@@ -16,7 +13,7 @@ response=$(zenity --entry --title="Aplicatie Practica 2023" --text="            
 if [[ "$response" == "1" || "$response" == "2" || "$response" == "3" || "$response" == "4" || "$response" == "5" ]]; then
     init=1
 else
-    # Utilizați Zenity pentru a afișa un mesaj de eroare
+    # Afisare mesaj de eroare in caz ca optiunea introdusa de utilizator nu este valida
     zenity --error --title="Eroare" --text="Opțiunea nu este validă!"
     
 fi
@@ -46,6 +43,12 @@ if [ "$response" -eq 3 ]
 then
 	./continut_fisier.sh
 	./app_script.sh
+fi
+
+if [ "$response" -eq 4 ]
+then
+        ./diff.sh
+        ./app_script.sh
 fi
 
 
